@@ -8,7 +8,7 @@
 <body>
     <h1>Nacionalidade</h1>
     <p>
-        Sua nacionalidade: <input type="text" name="txtpais" id="txtpais">
+        País: <input type="text" name="txtpais" id="txtpais">
         <input type="button" value="enviar" onclick="resultado()">
     </p>
     <div id="res"></div>
@@ -17,14 +17,13 @@
             var txtp = window.document.querySelector('input#txtpais')
             var res = window.document.querySelector('div#res')
             var pais = txtp.value
-            
-            if (pais === 'Brasil') {
-                var mensagem = 'Você é brasileiro'
+            res.innerHTML += `<p>Seu país é <strong>${pais}</strong></p>`
+            if (pais != 'Brasil') {
+                res.innerHTML += `<p>Você é Estrangeiro!</p>`
             } else {
-                var mensagem = 'Você é estrangeiro'
+                res.innerHTML += `<p>Você é brasileiro!</p>`
             }
-    
-            res.innerHTML += `<p>${mensagem}</p>`
+            
         }
         
     </script>
