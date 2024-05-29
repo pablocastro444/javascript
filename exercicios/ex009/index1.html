@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <p>
+        Sua nacionalidade: <input type="text" name="txtpais" id="txtpais">
+        <input type="button" value="enviar" onclick="resultado()">
+    </p>
+    <div id="res"></div>
+    <script>
+        function resultado() {
+            var txtp = window.document.querySelector('input#txtpais')
+            var res = window.document.querySelector('div#res')
+            var pais = txtp.value
+            
+            if (pais === 'Brasil') {
+                var mensagem = 'Você é brasileiro'
+            } else {
+                var mensagem = 'Você é estrangeiro'
+            }
+    
+            res.innerHTML += `<p>${mensagem}</p>`
+        }
+        
+    </script>
+</body>
+</html>
